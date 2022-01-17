@@ -1,0 +1,456 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:chatAppC"
+        xmlns:WPF_Neumorphism_Plus="clr-namespace:WPF_Neumorphism_Plus;assembly=WPF_Neumorphism_Plus"
+        x:Class="chatAppC.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="528"
+        Width="750"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.Resources>
+            <Style x:Key="NeumorphismStyle_light"
+                   TargetType="Button">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Grid.Effect>
+                                    <WPF_Neumorphism_Plus:Neumorphism_Plus_Shader BorderRadius="15"
+                                                                                  BlurRadius="5"
+                                                                                  OffsetX="7"
+                                                                                  OffsetY="5"
+                                                                                  SpreadRadius="2"
+                                                                                  PrimaryColor="Silver"
+                                                                                  SecondaryColor="WhiteSmoke" />
+                                </Grid.Effect>
+                                <Rectangle Fill="{TemplateBinding Background}"
+                                           RadiusX="15"
+                                           RadiusY="15" />
+                                <ContentPresenter HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver"
+                             Value="True">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Grid.Effect>
+                                            <WPF_Neumorphism_Plus:Neumorphism_Plus_Shader BorderRadius="15"
+                                                                                          BlurRadius="7"
+                                                                                          OffsetX="5"
+                                                                                          OffsetY="3"
+                                                                                          SpreadRadius="0"
+                                                                                          PrimaryColor="Silver"
+                                                                                          SecondaryColor="WhiteSmoke"
+                                                                                          Inset="1" />
+                                        </Grid.Effect>
+                                        <Rectangle Fill="{TemplateBinding Background}"
+                                                   RadiusX="15"
+                                                   RadiusY="15" />
+                                        <ContentPresenter HorizontalAlignment="Center"
+                                                          VerticalAlignment="Center" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="NeumorphismStyle_dark"
+                   TargetType="Button">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Grid.Effect>
+                                    <WPF_Neumorphism_Plus:Neumorphism_Plus_Shader BorderRadius="15"
+                                                                                  BlurRadius="5"
+                                                                                  OffsetX="7"
+                                                                                  OffsetY="5"
+                                                                                  SpreadRadius="2"
+                                                                                  PrimaryColor="#FF202020"
+                                                                                  SecondaryColor="#FF503F5F" />
+                                </Grid.Effect>
+                                <Rectangle Fill="{TemplateBinding Background}"
+                                           RadiusX="15"
+                                           RadiusY="15" />
+                                <ContentPresenter HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver"
+                             Value="True">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Grid>
+                                        <Grid.Effect>
+                                            <WPF_Neumorphism_Plus:Neumorphism_Plus_Shader BorderRadius="15"
+                                                                                          BlurRadius="7"
+                                                                                          OffsetX="5"
+                                                                                          OffsetY="3"
+                                                                                          SpreadRadius="0"
+                                                                                          PrimaryColor="#FF202020"
+                                                                                          SecondaryColor="#FF503F5F"
+                                                                                          Inset="1" />
+                                        </Grid.Effect>
+                                        <Rectangle Fill="{TemplateBinding Background}"
+                                                   RadiusX="15"
+                                                   RadiusY="15" />
+                                        <ContentPresenter HorizontalAlignment="Center"
+                                                          VerticalAlignment="Center" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+        
+        
+
+        <Grid x:Name="gridlogin"
+              Visibility="Collapsed">
+            <Image Source="img/bgl.jpg"
+                   RenderOptions.BitmapScalingMode="HighQuality" />
+            <Border Height="320"
+                    Width="492"
+                    Margin="4,4,0,0"
+                    CornerRadius="25"
+                    Background="Violet"
+                    Opacity="0.12">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="40"
+                                      Direction="270"
+                                      ShadowDepth="10"
+                                      Color="Black"
+                                      RenderingBias="Quality" />
+                </Border.Effect>
+
+            </Border>
+
+            <Border Background="#FFE2D5E2"
+                    Height="40"
+                    Width="250"
+                    Margin="0,0,180,210">
+                <Border.Effect>
+                    <WPF_Neumorphism_Plus:Neumorphism_Plus_Shader BorderRadius="10"
+                                                                  BlurRadius="2"
+                                                                  OffsetX="7"
+                                                                  OffsetY="5"
+                                                                  SpreadRadius="2"
+                                                                  PrimaryColor="Silver"
+                                                                  SecondaryColor="WhiteSmoke" />
+                </Border.Effect>
+                <TextBox Padding="10"
+                         Background="Transparent"
+                         Text="Username"
+                         BorderThickness="0"
+                         Width="250"
+                         Name="username">
+
+                </TextBox>
+            </Border>
+
+            <Border Background="#FFE2D5E2"
+                    Height="40"
+                    Width="250"
+                    Margin="0,0,180,100">
+                <Border.Effect>
+                    <WPF_Neumorphism_Plus:Neumorphism_Plus_Shader BorderRadius="10"
+                                                                  BlurRadius="2"
+                                                                  OffsetX="7"
+                                                                  OffsetY="5"
+                                                                  SpreadRadius="2"
+                                                                  PrimaryColor="Silver"
+                                                                  SecondaryColor="WhiteSmoke" />
+                </Border.Effect>
+                <PasswordBox Padding="10"
+                             Background="Transparent"
+                             Password="password"
+                             BorderThickness="0"
+                             Width="250"
+                             Name="password">
+
+                </PasswordBox>
+            </Border>
+
+            <Button x:Name="Btnlogin"
+                    Style="{StaticResource NeumorphismStyle_light}"
+                    Content="Log in"
+                    Background="#FFE2D5E2"
+                    Height="40"
+                    Width="80"
+                    Margin="0,60,340,0"
+                    Click="btnlogin_Click" />
+            <Button x:Name="Btnsignup"
+                    Style="{StaticResource NeumorphismStyle_light}"
+                    Content="Sigh up"
+                    Background="#FFE2D5E2"
+                    Height="40"
+                    Width="80"
+                    Margin="0,60,130,0"
+                    Click="btnSighin_Click" />
+        </Grid>
+
+        <Grid x:Name="gridlogin2"
+              Visibility="Visible">
+            <Image Source="img/bgd.jpg"
+                   RenderOptions.BitmapScalingMode="HighQuality" />
+            <Border Height="324"
+                    Width="484"
+                    Margin="0,5,0,0"
+                    CornerRadius="26"
+                    Background="Violet"
+                    Opacity="0.15">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="40"
+                                      Direction="270"
+                                      ShadowDepth="10"
+                                      Color="Black"
+                                      RenderingBias="Quality" />
+                </Border.Effect>
+
+            </Border>
+
+            <Border Background="#FF3F2E4D"
+                    Height="40"
+                    Width="250"
+                    Margin="0,0,180,210">
+                <Border.Effect>
+                    <WPF_Neumorphism_Plus:Neumorphism_Plus_Shader BorderRadius="10"
+                                                                  BlurRadius="2"
+                                                                  OffsetX="7"
+                                                                  OffsetY="5"
+                                                                  SpreadRadius="2"
+                                                                  PrimaryColor="#FF202020"
+                                                                  SecondaryColor="#FF503F5F" />
+                </Border.Effect>
+                <TextBox Padding="10"
+                         Background="Transparent"
+                         Foreground="WhiteSmoke"
+                         Text="Username"
+                         BorderThickness="0"
+                         Width="250"
+                         Name="username2">
+
+                </TextBox>
+            </Border>
+
+            <Border Background="#FF3F2E4D"
+                    Height="40"
+                    Width="250"
+                    Margin="0,0,180,100">
+                <Border.Effect>
+                    <WPF_Neumorphism_Plus:Neumorphism_Plus_Shader BorderRadius="10"
+                                                                  BlurRadius="2"
+                                                                  OffsetX="7"
+                                                                  OffsetY="5"
+                                                                  SpreadRadius="2"
+                                                                  PrimaryColor="#FF202020"
+                                                                  SecondaryColor="#FF503F5F" />
+                </Border.Effect>
+                <PasswordBox Padding="10"
+                             Background="Transparent"
+                             Foreground="WhiteSmoke"
+                             Password="password"
+                             BorderThickness="0"
+                             Width="250"
+                             Name="password2">
+
+                </PasswordBox>
+            </Border>
+
+            <Button x:Name="Btnlogin2"
+                    Style="{StaticResource NeumorphismStyle_dark}"
+                    Content="Log in"
+                    Background="#FF3F2E4D"
+                    Foreground="WhiteSmoke"
+                    Height="40"
+                    Width="80"
+                    Margin="0,60,340,0"
+                    Click="btnlogin_Click" />
+            <Button x:Name="Btnsignup2"
+                    Style="{StaticResource NeumorphismStyle_dark}"
+                    Content="Sigh up"
+                    Background="#FF3F2E4D"
+                    Foreground="WhiteSmoke"
+                    Height="40"
+                    Width="80"
+                    Margin="0,60,130,0"
+                    Click="btnSighin_Click" />
+        </Grid>
+
+        <Grid x:Name="gridchat" 
+              Visibility="Collapsed">
+            <Image Source="img/bg.jpg"
+                   RenderOptions.BitmapScalingMode="HighQuality">
+                <Image.Effect>
+                    <BlurEffect Radius="10" />
+                </Image.Effect>
+            </Image>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"
+                                      x:Name="grid0"/>
+
+                    <ColumnDefinition Name="grid1"/>
+                </Grid.ColumnDefinitions>
+                <Border Background="#d8302040">
+                    
+                </Border>
+                <Border Grid.Column="1"
+                        Background="#80302040">
+                </Border>
+                <Border Background="#d8302040"
+                        Grid.Column="1"
+                        Height="40"
+                        Width="350"
+                        Margin="0,400,100,0"
+                        CornerRadius="16">
+                    
+                    <TextBox Padding="7"
+                             Background="Transparent"
+                             Foreground="WhiteSmoke"
+                             Text="say hi"
+                             BorderThickness="0"
+                             Width="330"
+                             Name="message"
+                             FontSize="16">
+
+                    </TextBox>
+                </Border>
+                <Button x:Name="Btnsend"
+                        Grid.Column="1"
+                        Background="#d8302040"
+                        Foreground="WhiteSmoke"
+                        Height="40"
+                        Width="40"
+                        Margin="370,400,0,0"
+                        Click="Btnsend_Click"
+                        BorderThickness="0">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius"
+                                    Value="30" />
+                        </Style>
+                    </Button.Resources>
+                    <Image Source="img/iconsend.png"
+                           RenderOptions.BitmapScalingMode="HighQuality"
+                           Width="20"
+                           Margin="5,3,0,0"/>
+
+                </Button>
+                <Button x:Name="Btnexit"
+                        Grid.Column="0"
+                        Background="#d8302040"
+                        Foreground="WhiteSmoke"
+                        Height="40"
+                        Width="40"
+                        Margin="0,440,140,0"
+                        Click="Btnexit_Click"
+                        BorderThickness="0">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius"
+                                    Value="30" />
+                        </Style>
+                    </Button.Resources>
+                    <Image Source="img/iconback.png"
+                           RenderOptions.BitmapScalingMode="HighQuality"
+                           Width="45"
+                           Margin="0,0,0,0" />
+
+
+                </Button>
+                <Border Background="#d8302040"
+                        Height="40"
+                        Width="140"
+                        Margin="0,340,50,0"
+                        CornerRadius="16">
+
+                    <TextBox Padding="7"
+                             Background="Transparent"
+                             Foreground="WhiteSmoke"
+                             Text="Search user"
+                             BorderThickness="0"
+                             Width="120"
+                             Name="user"
+                             FontSize="16">
+
+                    </TextBox>
+                </Border>
+                <Button x:Name="Btnadd"
+                        Grid.Column="0"
+                        Background="#d8302040"
+                        Foreground="WhiteSmoke"
+                        Height="40"
+                        Width="40"
+                        Margin="140,340,0,0"
+                        Click="Btnadd_Click"
+                        BorderThickness="0">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius"
+                                    Value="30" />
+                        </Style>
+                    </Button.Resources>
+                    <Grid Height="40"
+                          Width="40">
+                        <Border Height="27"
+                                Width="4"
+                                Background="White"
+                                CornerRadius="2"
+                                Margin="0,-1,2,0" />
+                        <Border Height="4"
+                                Width="27"
+                                Background="White"
+                                CornerRadius="2"
+                                Margin="0,0,1,0" />
+                    </Grid>
+
+
+                </Button>
+
+                <DockPanel Margin="0,0,0,100"
+                           Grid.Column="1">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel x:Name="messagelist"
+                                    HorizontalAlignment="Stretch">
+                        </StackPanel>
+                    </ScrollViewer>
+                </DockPanel>
+
+                <DockPanel Margin="0,0,0,120">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel x:Name="chatlist"
+                                    HorizontalAlignment="Stretch">
+                            
+                        </StackPanel>
+                    </ScrollViewer>
+                </DockPanel>
+
+            </Grid>
+        </Grid>
+
+        
+
+
+
+
+    </Grid>
+</Window>

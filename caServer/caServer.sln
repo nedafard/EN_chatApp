@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "caServer", "caServer.csproj", "{AC7E8BFA-F3D6-44A2-8FCF-D3D48005D0C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC7E8BFA-F3D6-44A2-8FCF-D3D48005D0C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC7E8BFA-F3D6-44A2-8FCF-D3D48005D0C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC7E8BFA-F3D6-44A2-8FCF-D3D48005D0C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC7E8BFA-F3D6-44A2-8FCF-D3D48005D0C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {31730BB9-47EB-4BFA-8F03-1D6AA7D06755}
+	EndGlobalSection
+EndGlobal
